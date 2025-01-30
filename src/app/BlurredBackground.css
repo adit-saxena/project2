@@ -1,0 +1,15 @@
+.background-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+  

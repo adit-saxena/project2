@@ -1,168 +1,383 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+/* page.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
+.container {
+  font-family: "Bricolage Grotesque", serif;
+  padding: 0 4vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  align-items: center;
+
+  cursor: url('/cursor.png'), auto;
+  
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 4vw; /* Ensure padding matches the container */
+  position: fixed; /* Keeps the header on top */
+  top: 0; /* Ensure it starts from the top */
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  z-index: 1000; /* Ensures it's above all other elements */
+  background-color: white; /* Background to cover content underneath */
+}
+.hero{
+  display: flex;
+  flex-direction: column;
+  margin-top: 24vh;
+  margin-bottom: 24vh;
+  width: 50vw;
+  align-items: center;
+  text-align: center;
+  gap: 3vh;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.hero span{
+  color: red;
+  font-weight: 900;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.hero h2{
+font-size: 2rem;
+font-weight: 600;
+}
+
+.outerbox {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #07008C;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  
+}
+.tagrow{
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4vh;
+}
+
+.heroproject {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  background-color: powderblue;
+}
+
+.heroimage {
+  max-width: 40vw; /* Ensure images scale well */
+  height: auto;
+  object-fit: contain; /* Prevent image distortion */
+}
+
+.leftcol{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-left: 4vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+}
+
+.leftcol h3{
+  color: aliceblue;
+  font-size: 3rem;
+  margin-top: auto;
+}
+
+.rightcol{
+  display: flex;
+  width: 50%;
+  justify-content: flex-end; /* Push image to the right */
+  margin-left: auto;
+
+}
+
+.rightcol img{
+  object-fit:cover;
+  height: auto;
+  width: 100%; /* Ensures the image fills the right column */
+  max-height: 80vh;
+}
+
+/* Hero text container */
+.herotWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  text-align: center;
+  overflow: hidden; /* Prevent text overflow during animation */
+  position: relative;
+}
+
+/* Hero text styles */
+.heroText {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1f1f1f;
+  transition: transform 1.5s ease-in-out, font-size 1.5s ease-in-out, top 1.5s ease-in-out;
+  position: relative;
+}
+
+/* Animation: Shrink and move to the nav bar */
+.animate .heroText {
+  font-size: 1rem; /* Adjust to nav text size */
+  transform: translateY(-200vh); /* Move upward */
+  position: fixed;
+  top: 2vh; /* Align to the nav bar */
+  left: 4vw; /* Adjust to nav positioning */
+  color: #3d3d3d; /* Optional: Match nav text color */
+}
+
+
+.tag {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 48px;
+  background-color:rgba(0, 0, 0, 0.4);
+  color: white;
   font-weight: 600;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.header p {
+  font-size: 1rem;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.heroproject{
   display: flex;
+  flex-direction: row;
+  background-color: powderblue;
+  margin-top: 6vh;
+}
+
+.mydescription {
+  max-width: 35vw;
+  color: #3d3d3d;
+  text-align: center;
+  display: none;  /* Initially hidden */
+  opacity: 0;  /* Add opacity to handle smooth transition */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for showing */
+}
+
+.mydescription.show {
+  display: block;  /* Show the description after scrolling */
+  opacity: 1;  /* Make it fully visible */
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: row; /* Align text and image horizontally */
+  justify-content: space-between;
+  margin: 3rem 5vw;
+}
+
+.textContainer {
+  flex: 1;
+  padding: 1rem;
+  max-width: 50%; /* Limit the width of the text section */
+}
+
+.projectTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3b3b3b;
+  margin-bottom: 1rem;
+}
+
+.projectSubtitle {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #6b6b6b;
+  margin-bottom: 1.5rem;
+}
+
+.projectAuthor {
+  font-size: 1rem;
+  color: #7b7b7b;
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 50%;
+  padding: 1rem;
+}
+
+.imageContainer img {
+  border-radius: 12px; /* Optional: rounded corners for the image */
+  max-width: 100%;
+  height: auto;
+}
+
+
+.herotext{
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.mydescriptionhero {
+  max-width: 50vw;
+  font-size: 2rem;
+
+  margin-top: 20vh;
+  text-align: center;
+  color:#3d3d3d;
+  text-align: center;
+}
+
+.leftmenu{
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.mydescription span{
+  color: red;
+  font-weight: 600;
+}
+.mydescriptionhero span{
+  color: red;
+  font-weight: 600;
+}
+
+.nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+}
+/* For all tabs */
+.tabs {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Active tab styles */
+.activeTab {
+  font-weight: bold;
+  color: #3d3d3d; /* Highlight color for the active tab */
+
+}
+
+/* Underline for the active tab */
+.activeTab::after {
+  content: '';
+  position: absolute;
+  left: 35%;
+  bottom: -4px;
+  width: 30%;
+  height: 4px;
+  background-color: green; /* Same as the text highlight color */
+  border-radius: 20%;
+}
+
+.rightmenu{
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.resumeButton {
+  display: flex;
+  transition: ease-in-out 0.2s;
+  background-color: #1F1F1F;
+  color: aliceblue;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 48px;
+  align-items: center;
+}
+
+.resumeButton:hover {
+  background-color: green;
+}
+
+.intro {
+  width: 70vw;
+  margin-right: auto;
+  margin-top: 30vh;
+  position: relative;
+  height: 50vh;
+}
+.intro p{
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.heroimage{
+  aspect-ratio: fixed;
+  max-width: 40vw;
+  margin-right: auto;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.intro h1 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  margin-bottom: 6vh;
+  font-weight: 600;
+  text-align: left;
 }
 
-.footer {
-  grid-row-start: 3;
+.intro em {
+  font-style: italic;
+  color: #ff4500; /* Adjust branding color */
+}
+
+.intro .highlight {
+  color: red;
+  font-weight: bold;
+}
+
+.logos {
   display: flex;
-  gap: 24px;
+  justify-content: space-around;
+  margin: 2rem 0;
+  gap: 1rem;
+  position: relative;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.work {
+  margin-top: 2rem;
+  position: relative;
 }
 
-.footer img {
-  flex-shrink: 0;
+.work h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.work p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+/* New Styles for the Animated Background */
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent the canvas from interfering with interactions */
+  background-color: #000; /* Optional: Add a fallback color */
 }
