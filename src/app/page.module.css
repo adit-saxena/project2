@@ -4,7 +4,7 @@
 
 .container {
   font-family: "Bricolage Grotesque", serif;
-  padding: 0 4vw;
+  padding: 0 4vw 4vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -48,11 +48,29 @@ font-size: 2rem;
 font-weight: 600;
 }
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 16vh;
+  margin-bottom: 4vh;
+  width: 100%;
+  align-items: center;
+}
+
+.footer span{
+  color: red;
+  font-weight: 900;
+}
+
+.footer h2{
+font-size: 2rem;
+font-weight: 600;
+}
+
 .outerbox {
   width: 90vw;
   display: flex;
   flex-direction: row;
-  background-color: #07008C;
   border-radius: 0.4rem;
   overflow: hidden;
   
@@ -305,6 +323,7 @@ font-weight: 600;
   padding: 12px 24px;
   border-radius: 48px;
   align-items: center;
+  font-family: "Bricolage Grotesque", serif;
 }
 
 .resumeButton:hover {
@@ -355,21 +374,11 @@ font-weight: 600;
 }
 
 .work {
-  margin-top: 2rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
 }
 
-.work h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.work p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-}
 
 /* New Styles for the Animated Background */
 .canvas {

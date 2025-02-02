@@ -5,9 +5,9 @@ import styles from './page.module.css';
 import Tags from './tags';
 import Link from 'next/link';
 
-export default function Work({ Tag1, Tag2, Tag3, Title, Url, PageUrl, backgroundColor }) { // Add backgroundColor prop
+export default function Workdrive({ Tag1, Tag2, Tag3, Title, Url, PageUrl, backgroundColor }) { // Add backgroundColor prop
   return (
-    <Link href={PageUrl}>
+    <Link href={PageUrl} target='blank'>
       <div className={styles.outerbox} style={{ backgroundColor: backgroundColor }}> {/* Apply style here */}
         <div className={styles.leftcol}>
           <div className={styles.tagrow}>

@@ -1,0 +1,98 @@
+
+.container {
+    font-family: "Bricolage Grotesque", serif;
+    padding: 0 4vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: url('/cursor.png'), auto;
+    }
+  
+    .hero{
+      margin-top: 14vh;
+      width: 100%;
+      margin-right: auto;
+    }
+
+    .hero img{
+      max-height: 50vh;
+    }
+
+    .hero h5{
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    .hero p{
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .hero h4{
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: darkgrey;
+    }
+
+    .container h3{
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+    
+    .description p{
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .herotext{
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+    }
+
+    .heroimg{
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+    }
+
+    .hero img{
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    .work{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .workrow{
+      display: flex;
+      flex-direction: row;
+      gap: 2vw;
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+    }
+
+    .description{
+      max-width: 40vw;
+      margin-right: auto;
+      line-height: 190%;
+
+      color: #3d3d3d;
+    }
+
+    .heading{
+      margin-left: 1vw;
+      margin-right: 10vw;
+      width: 15vw;
+
+      color: grey;
+    }
+
+    .serial{
+      margin-left: 6vw;
+      width: 5vw;
+      color: darkgrey;
+    }
