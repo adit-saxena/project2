@@ -7,12 +7,14 @@
     flex-direction: column;
     align-items: center;
     cursor: url('/cursor.png'), auto;
+    background-color: white;
     }
   
     .hero{
       margin-top: 14vh;
       width: 100%;
       margin-right: auto;
+      color: black;
     }
 
     .hero img{
@@ -95,4 +97,23 @@
       margin-left: 6vw;
       width: 5vw;
       color: darkgrey;
+    }
+
+    @media screen and (max-width: 500px) {
+      .workrow{
+        flex-direction: column;
+        width: 100%;
+      } 
+      .description{
+        max-width: 100%;
+      }
+      .heading{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+      }
+      .serial{
+        margin-left: 0;
+        max-width: 100%;
+      }
     }
