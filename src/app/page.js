@@ -6,6 +6,12 @@ import Tags from './tags'
 import Footer from './footer'
 import Clarity from '@microsoft/clarity';
 import Workdrive from './workdrive';
+import Hotjar from '@hotjar/browser';
+
+const siteId = 5290994;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 
 const projectId = "q3rubtkac"
 
