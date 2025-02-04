@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Clarity from '@microsoft/clarity';
+import Hotjar from '@hotjar/browser';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,15 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const siteId = 5290994;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
+
+const projectId = "q3rubtkac"
+
+Clarity.init(projectId);
 
 export const metadata = {
   title: "Portfolio | Adit Saxena",
