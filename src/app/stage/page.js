@@ -28,7 +28,7 @@ export default function Watchlist() {
           </h5>
         </div>
         <div className={stylesw.heroimg}>
-        <img src="/synopsysstage.png" alt="Project Image" />
+        <img src="/synopsysstage.png" alt="Project Image"/>
         </div>
       </div>
        
@@ -73,10 +73,17 @@ export default function Watchlist() {
           heading="INITIAL IDEATION"
           description={<span>We started some <strong>early ideations </strong>on how a trailer can be integrated into our platter - and came up with a few different <strong>animations</strong> that could greatly boost our UI - while also helping the user judge the content better. While we had a lot and lot of questions while executing this phase, we focussed on <strong> quick iterations</strong> based on the past researches and user data.</span>}
         />
+
         <Workrow 
           serial="08"
-          heading="BUT BUT BUT"
-          description={<span>Hey! Thanks for scrolling this far. As of 2nd Feb, I am still working on documenting this project - generally after my internship work hours. Would love a bit of empathy - and time. But but, I could make you scroll this far, that means <strong>I am worth a shot for the role you're considering.</strong></span>}
+          heading="INITIAL IDEATION"
+          description={<span>We started some <strong>early ideations </strong>on how a trailer can be integrated into our platter - and came up with a few different <strong>animations</strong> that could greatly boost our UI - while also helping the user judge the content better. While we had a lot and lot of questions while executing this phase, we focussed on <strong> quick iterations</strong> based on the past researches and user data.</span>}
+        />
+
+        <Workrow 
+          serial="09"
+          heading="BUT - THE NDA"
+          description={<span>Hey! Thanks for scrolling this far. As of 20th Feb, this project is under NDA, but I would still love the opportunity to discuss it in person. Also, if I could make you scroll this far, that means <strong>I am worth a shot for the role you're considering. Thanks!</strong></span>}
         />
       </section>
       </div>
