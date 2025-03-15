@@ -441,5 +441,9 @@ color: #000;
     margin-top: 8vh;
   }
 
+  .container{
+    background-color: white;
+  }
+
 
 }
