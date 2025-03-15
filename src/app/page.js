@@ -1,21 +1,12 @@
-import Header from './header';
-import Hero from './hero';
+'use client';
+import Header from './components/header';
+import Hero from './components/hero';
 import styles from './page.module.css';
-import Work from './work'
-import Tags from './tags'
-import Footer from './footer'
-import Clarity from '@microsoft/clarity';
-import Workdrive from './workdrive';
-import Hotjar from '@hotjar/browser';
-
-const siteId = 5290994;
-const hotjarVersion = 6;
-
-Hotjar.init(siteId, hotjarVersion);
-
-const projectId = "q3rubtkac"
-
-Clarity.init(projectId);
+import Work from './components/work'
+import Tags from './components/tags'
+import Footer from './components/footer'
+import Workdrive from './components/workdrive';
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -23,9 +14,27 @@ export default function Home() {
       <Header/>
       
       <Hero />
-
         <section className={styles.work}>
-        <Work 
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 1 }}
+          animate={{
+          opacity: 1,
+          y: [0, -5, 0], // Floating effect after initial drop
+          scale: 1,
+          }}
+          transition={{
+          duration: 0.4, // Initial drop duration
+          y: {
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+    },
+  }}
+  whileHover={{ scale: 0.98, opacity: 0.9 }}
+>
+          
+          <Work 
         Tag1="Wireframing"
         Tag2="Prototyping"
         Tag3="Under NDA"
@@ -35,6 +44,17 @@ export default function Home() {
         backgroundColor="#670000"
         />
 
+        </motion.div>
+        
+
+        
+        <motion.div
+        initial={{ opacity: 0, y: 200, scale:1 }}
+        animate={{ opacity: 1, y: 0, scale:1 }}
+        transition={{ duration: 0.4 }}
+        whileHover={{ scale: 0.98, opacity: 0.9, }}
+        
+        >
         <Workdrive 
         Tag1="In-Depth Interviews"
         Tag2="Wireframing"
@@ -45,6 +65,16 @@ export default function Home() {
         backgroundColor="#07008C"
       
         />
+        </motion.div>
+
+        
+        <motion.div
+        initial={{ opacity: 0, y: 200, scale:1 }}
+        animate={{ opacity: 1, y: 0, scale:1 }}
+        transition={{ duration: 0.4 }}
+        whileHover={{ scale: 0.98, opacity: 0.9, }}
+        
+        >
 
         <Workdrive 
         Tag1="Survey Design"
@@ -57,6 +87,18 @@ export default function Home() {
       
         />
 
+        </motion.div>
+
+        <motion.div
+        initial={{ opacity: 0, y: 200, scale:1 }}
+        animate={{ opacity: 1, y: 0, scale:1 }}
+        transition={{ duration: 0.4 }}
+        whileHover={{ scale: 0.98, opacity: 0.9, }}
+        
+        >
+
+       
+
         <Workdrive 
         Tag1="Internship"
         Tag2="Stakeholders Collab"
@@ -67,6 +109,7 @@ export default function Home() {
         backgroundColor="#200054"
       
         />
+         </motion.div>
         </section>
         <Footer />
 

@@ -1,11 +1,11 @@
 // pages/project/my-project.js
 
-import Header from '../header';
-import Hero from '../hero';
+import Header from '../components/header';
+import Hero from '../components/hero';
 import styles from '../page.module.css';
 import stylesw from './watchlist.module.css';
-import Work from '../work';
-import Tags from '../tags'
+import Work from '../components/work';
+import Tags from '../components/tags'
 import Workrow from './workrow'
 
 
