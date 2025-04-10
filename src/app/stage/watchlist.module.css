@@ -85,6 +85,11 @@
       color: #3d3d3d;
     }
 
+    .description strong{
+      font-weight: 600;
+    }
+
+
     .heading{
       margin-left: 1vw;
       margin-right: 10vw;

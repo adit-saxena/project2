@@ -55,13 +55,13 @@ export default function Home() {
         whileHover={{ scale: 0.98, opacity: 0.9, }}
         
         >
-        <Workdrive 
+        <Work 
         Tag1="In-Depth Interviews"
         Tag2="Wireframing"
         Tag3="UI Design"
         Title="Matchmaking done right - evaluating how Schmooze could do it better"
         Url="./schmoozecover.png"
-        PageUrl="https://drive.google.com/file/d/1W_xGIY-43EVgrNdcKGNusVVSsSbO2a1S/view?usp=sharing"
+        PageUrl="/schmooze"
         backgroundColor="#07008C"
       
         />

@@ -1,6 +1,6 @@
 // pages/project/my-project.js
 
-import Header from '../components/header';
+import HeaderP from '../components/headerProjects';
 import Hero from '../components/hero';
 import styles from '../page.module.css';
 import stylesw from './watchlist.module.css';
@@ -13,7 +13,7 @@ export default function Watchlist() {
     return (
     
       <div className={stylesw.container}>
-      <Header
+      <HeaderP
       BGColor={"#ffffff"}
       DSColor={"rgba(0, 0, 0, 0.05 )"}
       />
@@ -76,12 +76,6 @@ export default function Watchlist() {
 
         <Workrow 
           serial="08"
-          heading="INITIAL IDEATION"
-          description={<span>We started some <strong>early ideations </strong>on how a trailer can be integrated into our platter - and came up with a few different <strong>animations</strong> that could greatly boost our UI - while also helping the user judge the content better. While we had a lot and lot of questions while executing this phase, we focussed on <strong> quick iterations</strong> based on the past researches and user data.</span>}
-        />
-
-        <Workrow 
-          serial="09"
           heading="BUT - THE NDA"
           description={<span>Hey! Thanks for scrolling this far. As of 20th Feb, this project is under NDA, but I would still love the opportunity to discuss it in person. Also, if I could make you scroll this far, that means <strong>I am worth a shot for the role you're considering. Thanks!</strong></span>}
         />
