@@ -1,9 +1,6 @@
-
 import stylesw from './watchlist.module.css';
 
-
-
-export default function workrow({serial, heading, description}) {
+export default function Workrow({ serial, heading, description }) {
     return (
         <div className={stylesw.workrow}>
           <div className={stylesw.serial}>
@@ -12,11 +9,10 @@ export default function workrow({serial, heading, description}) {
           <div className={stylesw.heading}>
             <h3>{heading}</h3>
           </div>
+          {/* Change <p> to <div> here */}
           <div className={stylesw.description}>
-            <p>
             {description}
-            </p>
           </div>
-          </div>
-
-    )}
+        </div>
+    );
+}
