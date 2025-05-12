@@ -34,12 +34,12 @@ export default function Home() {
   whileHover={{ scale: 0.98, opacity: 0.9 }}
 >
           
-          <Work 
-        Tag1="Wireframing"
-        Tag2="Prototyping"
-        Tag3="Under NDA"
-        Title="Judging a movie by its cover made easy & convenient"
-        Url="./stagecover.png"
+        <Work 
+        Tag1="Internship"
+        Tag2="Wireframing"
+        Tag3="Primary Research"
+        Title="Building OTT for Bharat @ Stage OTT"
+        Url="./StageWorksAnimations.gif"
         PageUrl="/stage"
         backgroundColor="#670000"
         />
@@ -60,7 +60,7 @@ export default function Home() {
         Tag2="Wireframing"
         Tag3="UI Design"
         Title="Matchmaking done right - evaluating how Schmooze could do it better"
-        Url="./schmoozecover.png"
+        Url="./SchmoozeThumbnail.png"
         PageUrl="/schmooze"
         backgroundColor="#07008C"
       
@@ -83,7 +83,7 @@ export default function Home() {
         Title="Making gaming a bit more relaxing - and a lot less toxic"
         Url="./valorantcover.png"
         PageUrl="https://drive.google.com/file/d/1McBTaejw2VjvLo55hTbPdVNZnL8hfAUS/view"
-        backgroundColor="#230000"
+        backgroundColor="#B22A00"
       
         />
 
@@ -104,7 +104,7 @@ export default function Home() {
         Tag2="Stakeholders Collab"
         Tag3="Research"
         Title="Building to improve efficiency of our on-field sales team"
-        Url="./nurturecover.png"
+        Url="./nurturecover2.png"
         PageUrl="https://drive.google.com/file/d/1hibXJyl-nEYUOsyLJK21vgVIH_F57JVx/view"
         backgroundColor="#200054"
       

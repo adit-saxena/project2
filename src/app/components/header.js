@@ -30,7 +30,7 @@ export default function Header({ BGColor, DSColor }) {
       }}
       whileTap={{ scale: 0.9}}>
       <nav>
-        <a href="https://drive.google.com/file/d/1ooPnLnsSZYvygRQ34I-Na2zm7TqgI6Yc/view?usp=drive_link" target='blank' className={styles.resumeButton}>Resume</a>
+        <a href="./Resume_AditSaxena.pdf" target='_blank' className={styles.resumeButton}>Resume</a>
       </nav>
       </motion.div>
     </header>

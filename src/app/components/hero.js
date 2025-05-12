@@ -95,18 +95,21 @@ export default function Hero() {
         <motion.div
           className={styles.experiences} // Your existing experiences styles applied
           variants={experiencesWrapperVariants} // Simple fade for the wrapper
-          // Inherits initial/animate state from parent
+          // Inherits initial/animate state from 
+          
         >
+          
           {/* Grandchild 1: The first p tag */}
           {/* Animates based on itemVariants, triggered slightly after wrapper by delayChildren */}
           <motion.p variants={itemVariants}>
-            Currently Designing OTT Exprience @ Stage
+            <span>12+ months</span> of helping app-newbies feel at home
           </motion.p>
+          
 
           {/* Grandchild 2: The second p tag */}
           {/* Animates based on itemVariants, triggered slightly after wrapper by delayChildren */}
           <motion.p variants={itemVariants}>
-            Prev. @ nurture.farm
+            Prev. @ <a href='https://stage.in/' target='blank'>Stage OTT</a> & <a href='https://nurture.farm/' target='blank'> nurture.farm </a>
           </motion.p>
         </motion.div>
 
