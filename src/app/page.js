@@ -1,121 +1,119 @@
 'use client';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Header from './components/header';
 import Hero from './components/hero';
 import styles from './page.module.css';
-import Work from './components/work'
-import Tags from './components/tags'
-import Footer from './components/footer'
+import Work from './components/work';
 import Workdrive from './components/workdrive';
+import Footer from './components/footer';
+import Loader from './components/loader'; // Import the Loader component
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+  const pathname = usePathname();
+
+  // Effect to turn off loader when route changes
+  useEffect(() => {
+    setIsLoading(false);
+  }, [pathname]);
+
+  const handleLinkClick = () => {
+    setIsLoading(true);
+  };
+
   return (
     <div className={styles.container}>
-      <Header/>
-      
+      {isLoading && <Loader />} {/* Conditionally render the Loader */}
+      <Header />
       <Hero />
-        <section className={styles.work}>
+      <section className={styles.work}>
         <motion.div
           initial={{ opacity: 0, y: 200, scale: 1 }}
           animate={{
-          opacity: 1,
-          y: [0, -5, 0], // Floating effect after initial drop
-          scale: 1,
+            opacity: 1,
+            y: [0, -5, 0], // Floating effect after initial drop
+            scale: 1,
           }}
           transition={{
-          duration: 0.4, // Initial drop duration
-          y: {
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-    },
-  }}
-  whileHover={{ scale: 0.98, opacity: 0.9 }}
->
-          
-        <Work 
-        Tag1="Internship"
-        Tag2="Wireframing"
-        Tag3="Primary Research"
-        Title="Building OTT for Bharat @ Stage OTT"
-        Url="./StageWorksAnimations.gif"
-        PageUrl="/stage"
-        backgroundColor="#670000"
-        />
-
-        </motion.div>
-        
-
-        
-        <motion.div
-        initial={{ opacity: 0, y: 200, scale:1 }}
-        animate={{ opacity: 1, y: 0, scale:1 }}
-        transition={{ duration: 0.4 }}
-        whileHover={{ scale: 0.98, opacity: 0.9, }}
-        
+            duration: 0.4, // Initial drop duration
+            y: {
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            },
+          }}
+          whileHover={{ scale: 0.98, opacity: 0.9 }}
         >
-        <Work 
-        Tag1="In-Depth Interviews"
-        Tag2="Wireframing"
-        Tag3="UI Design"
-        Title="Matchmaking done right - evaluating how Schmooze could do it better"
-        Url="./SchmoozeThumbnail.png"
-        PageUrl="/schmooze"
-        backgroundColor="#07008C"
-      
-        />
-        </motion.div>
-
-        
-        <motion.div
-        initial={{ opacity: 0, y: 200, scale:1 }}
-        animate={{ opacity: 1, y: 0, scale:1 }}
-        transition={{ duration: 0.4 }}
-        whileHover={{ scale: 0.98, opacity: 0.9, }}
-        
-        >
-
-        <Workdrive 
-        Tag1="Survey Design"
-        Tag2="Wireframing"
-        Tag3="Concept Testing"
-        Title="Making gaming a bit more relaxing - and a lot less toxic"
-        Url="./valorantcover.png"
-        PageUrl="https://drive.google.com/file/d/1McBTaejw2VjvLo55hTbPdVNZnL8hfAUS/view"
-        backgroundColor="#B22A00"
-      
-        />
-
+          <Work
+            Tag1="Internship"
+            Tag2="Wireframing"
+            Tag3="Primary Research"
+            Title="Building OTT for Bharat @ Stage OTT"
+            Url="./StageWorksAnimations.gif"
+            PageUrl="/stage"
+            backgroundColor="#670000"
+            onClick={handleLinkClick} // Pass the click handler
+          />
         </motion.div>
 
         <motion.div
-        initial={{ opacity: 0, y: 200, scale:1 }}
-        animate={{ opacity: 1, y: 0, scale:1 }}
-        transition={{ duration: 0.4 }}
-        whileHover={{ scale: 0.98, opacity: 0.9, }}
-        
+          initial={{ opacity: 0, y: 200, scale: 1 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          whileHover={{ scale: 0.98, opacity: 0.9 }}
         >
+          <Work
+            Tag1="In-Depth Interviews"
+            Tag2="Wireframing"
+            Tag3="UI Design"
+            Title="Matchmaking done right - evaluating how Schmooze could do it better"
+            Url="./SchmoozeThumbnail.png"
+            PageUrl="/schmooze"
+            backgroundColor="#07008C"
+            onClick={handleLinkClick} // Pass the click handler
+          />
+        </motion.div>
 
-       
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 1 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          whileHover={{ scale: 0.98, opacity: 0.9 }}
+        >
+          <Workdrive
+            Tag1="Survey Design"
+            Tag2="Wireframing"
+            Tag3="Concept Testing"
+            Title="Making gaming a bit more relaxing - and a lot less toxic"
+            Url="./valorantcover.png"
+            PageUrl="https://drive.google.com/file/d/1McBTaejw2VjvLo55hTbPdVNZnL8hfAUS/view"
+            backgroundColor="#B22A00"
+            onClick={handleLinkClick} // Pass the click handler
+          />
+        </motion.div>
 
-        <Workdrive 
-        Tag1="Internship"
-        Tag2="Stakeholders Collab"
-        Tag3="Research"
-        Title="Building to improve efficiency of our on-field sales team"
-        Url="./nurturecover2.png"
-        PageUrl="https://drive.google.com/file/d/1hibXJyl-nEYUOsyLJK21vgVIH_F57JVx/view"
-        backgroundColor="#200054"
-      
-        />
-         </motion.div>
-        </section>
-        <Footer />
-
-        
-      
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 1 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          whileHover={{ scale: 0.98, opacity: 0.9 }}
+        >
+          <Workdrive
+            Tag1="Internship"
+            Tag2="Stakeholders Collab"
+            Tag3="Research"
+            Title="Building to improve efficiency of our on-field sales team"
+            Url="./nurturecover2.png"
+            PageUrl="https://drive.google.com/file/d/1hibXJyl-nEYUOsyLJK21vgVIH_F57JVx/view"
+            backgroundColor="#200054"
+            onClick={handleLinkClick} // Pass the click handler
+          />
+        </motion.div>
+      </section>
+      <Footer />
     </div>
   );
 }
-
