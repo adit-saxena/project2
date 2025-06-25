@@ -17,7 +17,7 @@ export default function Header({ BGColor, DSColor }) {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.4 }}>
       <p>
-        <i>Hi! I’m </i><b>Adit Saxena</b>
+        <i>Hi! I'm </i><b>Adit Saxena</b>
       </p>
       </motion.div>
       <motion.div
@@ -30,7 +30,7 @@ export default function Header({ BGColor, DSColor }) {
       }}
       whileTap={{ scale: 0.9}}>
       <nav>
-        <a href="./Resume_AditSaxena.pdf" target='_blank' className={styles.resumeButton}>Resume</a>
+        <a href="/Resume_AditSaxena.pdf" target='_blank' className={styles.resumeButton}>Resume</a>
       </nav>
       </motion.div>
     </header>

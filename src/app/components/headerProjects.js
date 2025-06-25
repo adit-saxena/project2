@@ -4,7 +4,7 @@
 import styles from '../page.module.css'; // Assuming your styles are here
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { IoArrowBack } from "react-icons/io5"; // 1. Import an icon
+import { ArrowLeft } from "lucide-react";
 
 export default function HeaderP({ BGColor, DSColor }) {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function HeaderP({ BGColor, DSColor }) {
           style={{ cursor: 'pointer' }}
           className={styles.backLink} // Add a class for styling
         >
-          <IoArrowBack /> {/* Add the icon */}
+          <ArrowLeft /> {/* Add the icon */}
           <span>Back to projects</span> {/* Keep text in a span for potential spacing */}
         </motion.a>
       </motion.div>
@@ -42,10 +42,10 @@ export default function HeaderP({ BGColor, DSColor }) {
       >
         <nav>
           <a
-            href="https://drive.google.com/file/d/1ooPnLnsSZYvygRQ34I-Na2zm7TqgI6Yc/view?usp=drive_link"
+            href="./Resume_AditSaxena.pdf"
             target='_blank'
             rel="noopener noreferrer"
-            className={styles.resumeButton}
+            className={styles.resumeButton2}
           >
             Resume
           </a>

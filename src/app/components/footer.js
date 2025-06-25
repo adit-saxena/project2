@@ -5,7 +5,7 @@ export default function Footer() {
   return (
       <div className={styles.footer}>
             <h2>
-            <i><span> Thanks for coming this far! </span></i>
+            <i> Thanks for coming this far! </i>
             </h2>
             <div className={styles.experiences}>
             <p>

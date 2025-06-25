@@ -67,13 +67,16 @@ const recentWorkWrapperVariants = {
     },
   },
 };
+  
 
 
 export default function Hero() {
   return (
+    
     // Outer non-motion div - kept as requested
     <div>
       {/* Main motion container applying containerVariants */}
+      
       <motion.div
         className={styles.hero} // Your existing hero styles applied
         variants={containerVariants}
@@ -85,7 +88,7 @@ export default function Hero() {
        
          <motion.h2 variants={itemVariants}>
           <i>
-            Data-driven <span> product designer </span>, crafting seamless
+            Data-driven <span> product designer  </span>, crafting seamless
             digital experiences that delight users - and businesses
           </i>
         </motion.h2>
@@ -102,7 +105,7 @@ export default function Hero() {
           {/* Grandchild 1: The first p tag */}
           {/* Animates based on itemVariants, triggered slightly after wrapper by delayChildren */}
           <motion.p variants={itemVariants}>
-            <span>12+ months</span> of helping app-newbies feel at home
+            12+ months of helping app-newbies feel at home
           </motion.p>
           
 

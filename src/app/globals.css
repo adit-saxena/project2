@@ -28,9 +28,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main{
+main {
   margin-top: 10vh;
-  }
+}
 
 * {
   box-sizing: border-box;

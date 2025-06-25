@@ -10,6 +10,9 @@ import Footer from './components/footer';
 import Loader from './components/loader'; // Import the Loader component
 import { motion } from "framer-motion";
 
+import Aurora from '../../components/Aurora/Aurora';
+import { Container } from 'lucide-react';
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const pathname = usePathname();
@@ -24,8 +27,18 @@ export default function Home() {
   };
 
   return (
+    
     <div className={styles.container}>
       {isLoading && <Loader />} {/* Conditionally render the Loader */}
+      <div className={styles["aurora-container"]}>
+    <Aurora
+  colorStops={["#5227FF", "#7CFF67", "#4318F2"]}
+  blend={0.5}
+  amplitude={1.0}
+  speed={0.5}
+/>
+  </div>
+      
       <Header />
       <Hero />
       <section className={styles.work}>
@@ -114,6 +127,7 @@ export default function Home() {
         </motion.div>
       </section>
       <Footer />
+      
     </div>
   );
 }

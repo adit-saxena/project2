@@ -9,13 +9,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: 
-  linear-gradient(to right, rgba(221, 221, 221, 0.2) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(221, 221, 221, 0.2) 1px, transparent 1px);
   background-size: 20px 20px;
-  background-color: white;
-
-
+  background: linear-gradient(to bottom, #0E033A, #07021D);
   cursor: url('/cursor.png'), auto;
   
 }
@@ -31,7 +26,7 @@
   left: 0;
   width: 100%; /* Full width of the viewport */
   z-index: 1000; /* Ensures it's above all other elements */
-  background: rgba(255, 255, 255, 1); /* Transparent white */
+  background: rgba(255, 255, 255, 0); /* Transparent white */
   backdrop-filter: blur(10px); /* Blurry effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
 }
@@ -64,29 +59,44 @@
 .hero{
   display: flex;
   flex-direction: column;
-  margin-top: 24vh;
+  margin-top: 30vh;
   margin-bottom: 24vh;
   width: 50vw;
   align-items: center;
   text-align: center;
   gap: 3vh;
+  z-index: 100;
+}
+.aurora-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
+
 .hero span{
-  color: red;
+  color: black;
   font-weight: 900;
+  background-color: white;
+  font-style: italic;
+  
+z-index: 100;
 }
 
 .hero h2{
 font-size: 2rem;
 font-weight: 600;
-color: #000;
+color: #fff;
+z-index: 100;
 }
 
 .hero h4{
 font-size: 1.2rem;
 font-weight: 400;
 margin-bottom: 1vh;
+color: whitesmoke;
+z-index: 100;
 }
 
 
@@ -108,7 +118,7 @@ margin-bottom: 1vh;
 .footer h2{
 font-size: 2rem;
 font-weight: 600;
-color: #000;
+color: #fff;
 }
 
 .outerbox {
@@ -131,7 +141,8 @@ color: #000;
   flex-direction: column;
   gap: 8px;
   margin-top: 8vh;
-  color: black;
+  color: whitesmoke;
+  z-index: 100;
 }
 
 .heroproject {
@@ -218,7 +229,7 @@ color: #000;
 
 .header p {
   font-size: 1rem;
-  color: #000;
+  color: #fff;
 }
 
 
@@ -366,7 +377,18 @@ color: #000;
 .resumeButton {
   display: flex;
   transition: ease-in-out 0.2s;
-  background-color: #1F1F1F;
+  color: aliceblue;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 48px;
+  align-items: center;
+  font-family: "Bricolage Grotesque", serif;
+}
+
+.resumeButton2 {
+  display: flex;
+  transition: ease-in-out 0.2s;
+  background-color: #07021D;
   color: aliceblue;
   font-size: 1rem;
   padding: 12px 24px;
@@ -376,6 +398,9 @@ color: #000;
 }
 
 .resumeButton:hover {
+  background-color: green;
+}
+.resumeButton2:hover {
   background-color: green;
 }
 
@@ -465,7 +490,7 @@ color: #000;
   }
 
   .container{
-    background-color: white;
+    background-color: #090226;
   }
 
 
