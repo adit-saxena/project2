@@ -6,10 +6,12 @@ import { motion } from 'framer-motion';
 import Hero from './components/hero';
 import styles from './page.module.css';
 import WorkNew from './components/worknew';
-import Footer from './components/footer';
-import Loader from './components/loader';
-import Aurora from '../../background/Aurora/Aurora';
-import AnimatedCard from './components/AnimatedCard';
+import dynamic from 'next/dynamic';
+
+const Footer = dynamic(() => import('./components/footer'), { ssr: false });
+const Loader = dynamic(() => import('./components/loader'), { ssr: false });
+const Aurora = dynamic(() => import('../../background/Aurora/Aurora'), { ssr: false });
+const AnimatedCard = dynamic(() => import('./components/AnimatedCard'), { ssr: false });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
