@@ -2,22 +2,19 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Header from './components/header';
+import { motion } from 'framer-motion';
 import Hero from './components/hero';
 import styles from './page.module.css';
-import Work from './components/work';
-import Workdrive from './components/workdrive';
+import WorkNew from './components/worknew';
 import Footer from './components/footer';
-import Loader from './components/loader'; // Import the Loader component
-import { motion } from "framer-motion";
-
-import Aurora from '../../components/Aurora/Aurora';
-import { Container } from 'lucide-react';
+import Loader from './components/loader';
+import Aurora from '../../background/Aurora/Aurora';
+import AnimatedCard from './components/AnimatedCard'; // 👈 Import new component
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const pathname = usePathname();
 
-  // Effect to turn off loader when route changes
   useEffect(() => {
     setIsLoading(false);
   }, [pathname]);
@@ -27,22 +24,24 @@ export default function Home() {
   };
 
   return (
-    
     <div className={styles.container}>
-      {isLoading && <Loader />} {/* Conditionally render the Loader */}
-      <div className={styles["aurora-container"]}>
-    <Aurora
-  colorStops={["#5227FF", "#7CFF67", "#4318F2"]}
-  blend={0.5}
-  amplitude={1.0}
-  speed={0.5}
-/>
-  </div>
+      {isLoading && <Loader />}
       
+      <div className={styles["aurora-container"]}>
+        <Aurora
+          colorStops={["#5227FF", "#7CFF67", "#4318F2"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+
       <Header />
       <Hero />
       <section className={styles.work}>
-        <motion.div
+        
+        
+          <motion.div
           initial={{ opacity: 0, y: 200, scale: 1 }}
           animate={{
             opacity: 1,
@@ -60,74 +59,63 @@ export default function Home() {
           }}
           whileHover={{ scale: 0.98, opacity: 0.9 }}
         >
-          <Work
+          <WorkNew
             Tag1="Internship"
             Tag2="Wireframing"
             Tag3="Primary Research"
             Title="Building OTT for Bharat @ Stage OTT"
-            Url="./StageWorksAnimations.gif"
+            Url="/StageWorksAnimations.webm"
             PageUrl="/stage"
             backgroundColor="#670000"
             onClick={handleLinkClick} // Pass the click handler
           />
         </motion.div>
+        
 
-        <motion.div
-          initial={{ opacity: 0, y: 200, scale: 1 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          whileHover={{ scale: 0.98, opacity: 0.9 }}
-        >
-          <Work
+        <AnimatedCard delay={0.1}>
+          <WorkNew
             Tag1="In-Depth Interviews"
             Tag2="Wireframing"
             Tag3="UI Design"
             Title="Matchmaking done right - evaluating how Schmooze could do it better"
-            Url="./SchmoozeThumbnail.png"
+            Url="/SchmoozeThumbnailMin.png"
             PageUrl="/schmooze"
             backgroundColor="#07008C"
-            onClick={handleLinkClick} // Pass the click handler
+            onClick={handleLinkClick}
           />
-        </motion.div>
+        </AnimatedCard>
 
-        <motion.div
-          initial={{ opacity: 0, y: 200, scale: 1 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          whileHover={{ scale: 0.98, opacity: 0.9 }}
-        >
-          <Workdrive
+        <AnimatedCard delay={0.2}>
+          <WorkNew
             Tag1="Survey Design"
             Tag2="Wireframing"
             Tag3="Concept Testing"
             Title="Making gaming a bit more relaxing - and a lot less toxic"
-            Url="./valorantcover.png"
+            Url="/valorantcovermin.png"
             PageUrl="https://drive.google.com/file/d/1McBTaejw2VjvLo55hTbPdVNZnL8hfAUS/view"
             backgroundColor="#B22A00"
-            onClick={handleLinkClick} // Pass the click handler
+            onClick={handleLinkClick}
+            isExternal={true}
           />
-        </motion.div>
+        </AnimatedCard>
 
-        <motion.div
-          initial={{ opacity: 0, y: 200, scale: 1 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          whileHover={{ scale: 0.98, opacity: 0.9 }}
-        >
-          <Workdrive
+        <AnimatedCard delay={0.3}>
+          <WorkNew
             Tag1="Internship"
             Tag2="Stakeholders Collab"
             Tag3="Research"
             Title="Building to improve efficiency of our on-field sales team"
-            Url="./nurturecover2.png"
+            Url="/nurturecover2min.png"
             PageUrl="https://drive.google.com/file/d/1hibXJyl-nEYUOsyLJK21vgVIH_F57JVx/view"
             backgroundColor="#200054"
-            onClick={handleLinkClick} // Pass the click handler
+            onClick={handleLinkClick}
+            isExternal={true}
           />
-        </motion.div>
+        </AnimatedCard>
+        
       </section>
+
       <Footer />
-      
     </div>
   );
 }

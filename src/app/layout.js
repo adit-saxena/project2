@@ -1,9 +1,9 @@
 // src/app/layout.js
 import { Geist, Geist_Mono } from "next/font/google"; // Corrected import name
 import "./globals.css";
+
 import Script from 'next/script'; // Import the Script component
-// Remove: import Clarity from '@microsoft/clarity';
-// Remove: import Hotjar from '@hotjar/browser';
+// import Clarity from '@microsoft/clarity';
 
 const geistSans = Geist({
 
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* Add the Clarity script using next/script */}
-        <Script id="microsoft-clarity-init" strategy="afterInteractive">
+        <Script id="microsoft-clarity-init" strategy="afterInteractive" defer>
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -50,21 +50,6 @@ export default function RootLayout({ children }) {
             })(window, document, "clarity", "script", "${clarityProjectId}");
           `}
         </Script>
-        <Script id="hotjar-init" strategy="afterInteractive">
-  {`
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3861756,hjsv:6}; // Your specific Hotjar Site ID
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  `}
-</Script>
-
-        
-
       </body>
     </html>
   );

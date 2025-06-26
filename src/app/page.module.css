@@ -1,5 +1,4 @@
 /* page.module.css */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 .container {
@@ -45,7 +44,6 @@
   height: 1.2em; /* Example size */
 }
 
-
 .resumeButton {
   /* Your styles for the resume button */
   padding: 0.5rem 1rem;
@@ -54,7 +52,6 @@
   text-decoration: none;
   color: inherit;
 }
-
 
 .hero{
   display: flex;
@@ -74,14 +71,12 @@
   z-index: 0;
 }
 
-
 .hero span{
   color: black;
   font-weight: 900;
   background-color: white;
   font-style: italic;
-  
-z-index: 100;
+  z-index: 100;
 }
 
 .hero h2{
@@ -98,8 +93,6 @@ margin-bottom: 1vh;
 color: whitesmoke;
 z-index: 100;
 }
-
-
 
 .footer{
   display: flex;
@@ -177,7 +170,6 @@ color: #fff;
   width: 50%;
   justify-content: flex-end; /* Push image to the right */
   margin-left: auto;
-
 }
 
 .rightcol img{
@@ -187,18 +179,7 @@ color: #fff;
   max-height: 80vh;
 }
 
-/* Hero text container */
-.herotWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full screen height */
-  text-align: center;
-  overflow: hidden; /* Prevent text overflow during animation */
-  position: relative;
-}
 
-/* Hero text styles */
 .heroText {
   font-size: 3rem;
   font-weight: bold;
@@ -207,7 +188,6 @@ color: #fff;
   position: relative;
 }
 
-/* Animation: Shrink and move to the nav bar */
 .animate .heroText {
   font-size: 1rem; /* Adjust to nav text size */
   transform: translateY(-200vh); /* Move upward */
@@ -216,7 +196,6 @@ color: #fff;
   left: 4vw; /* Adjust to nav positioning */
   color: #3d3d3d; /* Optional: Match nav text color */
 }
-
 
 .tag {
   font-size: 1rem;
@@ -231,7 +210,6 @@ color: #fff;
   font-size: 1rem;
   color: #fff;
 }
-
 
 .heroproject{
   display: flex;
@@ -298,7 +276,6 @@ color: #fff;
   height: auto;
 }
 
-
 .herotext{
   margin:auto;
   display: flex;
@@ -308,7 +285,6 @@ color: #fff;
 .mydescriptionhero {
   max-width: 50vw;
   font-size: 2rem;
-
   margin-top: 20vh;
   text-align: center;
   color:#3d3d3d;
@@ -338,7 +314,6 @@ color: #fff;
   color: white;
   font-size: 0.8rem;
 }
-/* For all tabs */
 .tabs {
   font-size: 1rem;
   cursor: pointer;
@@ -346,15 +321,10 @@ color: #fff;
   position: relative;
   transition: color 0.3s ease-in-out;
 }
-
-/* Active tab styles */
 .activeTab {
   font-weight: bold;
   color: #3d3d3d; /* Highlight color for the active tab */
-
 }
-
-/* Underline for the active tab */
 .activeTab::after {
   content: '';
   position: absolute;
@@ -365,7 +335,6 @@ color: #fff;
   background-color: green; /* Same as the text highlight color */
   border-radius: 20%;
 }
-
 .rightmenu{
   display: flex;
   flex-direction: row;
@@ -373,7 +342,6 @@ color: #fff;
   justify-content: space-between;
   gap: 2vw;
 }
-
 .resumeButton {
   display: flex;
   transition: ease-in-out 0.2s;
@@ -384,7 +352,6 @@ color: #fff;
   align-items: center;
   font-family: "Bricolage Grotesque", serif;
 }
-
 .resumeButton2 {
   display: flex;
   transition: ease-in-out 0.2s;
@@ -396,14 +363,12 @@ color: #fff;
   align-items: center;
   font-family: "Bricolage Grotesque", serif;
 }
-
 .resumeButton:hover {
   background-color: green;
 }
 .resumeButton2:hover {
   background-color: green;
 }
-
 .intro {
   width: 70vw;
   margin-right: auto;
@@ -414,13 +379,11 @@ color: #fff;
 .intro p{
   font-weight: 500;
 }
-
 .heroimage{
   aspect-ratio: fixed;
   max-width: 40vw;
   margin-right: auto;
 }
-
 .intro h1 {
   font-size: 2.4rem;
   line-height: 1.4;
@@ -428,17 +391,14 @@ color: #fff;
   font-weight: 600;
   text-align: left;
 }
-
 .intro em {
   font-style: italic;
   color: #ff4500; /* Adjust branding color */
 }
-
 .intro .highlight {
   color: red;
   font-weight: bold;
 }
-
 .logos {
   display: flex;
   justify-content: space-around;
@@ -446,16 +406,13 @@ color: #fff;
   gap: 1rem;
   position: relative;
 }
-
 .work {
   display: flex;
   flex-direction: column;
   gap: 10vh;
 }
 
-
 /* New Styles for the Animated Background */
-
 
 @media screen and (max-width: 500px) {
   .outerbox{
@@ -492,6 +449,4 @@ color: #fff;
   .container{
     background-color: #090226;
   }
-
-
 }
