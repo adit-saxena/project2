@@ -9,7 +9,7 @@ import WorkNew from './components/worknew';
 import Footer from './components/footer';
 import Loader from './components/loader';
 import Aurora from '../../background/Aurora/Aurora';
-import AnimatedCard from './components/AnimatedCard'; // 👈 Import new component
+import AnimatedCard from './components/AnimatedCard';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
