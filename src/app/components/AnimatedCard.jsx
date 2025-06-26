@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 
 export default function AnimatedCard({ children, delay = 0 }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '0px 0px 100px 0px' });
+  const inView = useInView(ref, { once: true, margin: '0px 0px -100px 0px' });
 
   return (
     <motion.div
@@ -12,7 +12,7 @@ export default function AnimatedCard({ children, delay = 0 }) {
       initial={{ opacity: 0, y: 200 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 0.2,
+        duration: 0.4,
         delay,
       }}
       whileHover={{ scale: 0.98, opacity: 0.9 }}
