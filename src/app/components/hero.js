@@ -72,12 +72,11 @@ export default function Hero() {
           href="/stage"
           variants={cuttochaseVariants}
           className={styles.cuttochase}
-          transition={{ duration: 0.4 }}
           whileHover={{
-          scale: 1.1,
-        transition: { duration: 0.2 },
-      }}
-      whileTap={{ scale: 0.9}}
+            scale: 1.1,
+            transition: { duration: 0.2 },
+          }}
+          whileTap={{ scale: 0.9 }}
 >
   Shortcut to my best work yet →
 </motion.a>
