@@ -34,7 +34,7 @@ export default function Home() {
           colorStops={["#5227FF", "#7CFF67", "#4318F2"]}
           blend={0.5}
           amplitude={1.0}
-          speed={0.5}
+          speed={1}
         />
       </div>
 
@@ -65,16 +65,16 @@ export default function Home() {
             Tag1="Internship"
             Tag2="Wireframing"
             Tag3="Primary Research"
-            Title="Building OTT for Bharat @ Stage OTT"
+            Title="Helping find content people love @ Stage OTT"
             Url="/StageWorksAnimations.webm"
             PageUrl="/stage"
-            backgroundColor="#670000"
+            backgroundColor="#420e0eff"
             onClick={handleLinkClick} // Pass the click handler
           />
         </motion.div>
         
 
-        <AnimatedCard delay={0.1}>
+        <AnimatedCard delay={0}>
           <WorkNew
             Tag1="In-Depth Interviews"
             Tag2="Wireframing"
@@ -87,7 +87,7 @@ export default function Home() {
           />
         </AnimatedCard>
 
-        <AnimatedCard delay={0.2}>
+        <AnimatedCard delay={0}>
           <WorkNew
             Tag1="Survey Design"
             Tag2="Wireframing"
@@ -101,7 +101,7 @@ export default function Home() {
           />
         </AnimatedCard>
 
-        <AnimatedCard delay={0.3}>
+        <AnimatedCard delay={0}>
           <WorkNew
             Tag1="Internship"
             Tag2="Stakeholders Collab"

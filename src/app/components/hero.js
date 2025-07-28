@@ -2,6 +2,9 @@
 import styles from '../page.module.css'; // Use your provided CSS file
 import { motion } from 'framer-motion';
 
+  
+
+
 // 1. Variants for the main container (orchestrates top-level stagger)
 const containerVariants = {
   hidden: { opacity: 1 }, // No animation needed for the container itself
@@ -39,36 +42,21 @@ const experiencesWrapperVariants = {
   },
 };
 
-// 4. Variants for the recentwork WRAPPER div (with highlight)
-const recentWorkWrapperVariants = {
-  hidden: {
-    opacity: 0,
-    // Start with a transparent background for the highlight effect
-    backgroundColor: 'rgba(255, 230, 0, 0)', // Transparent yellow (adjust color/alpha)
-    scale: 0.98 // Optional: slight scale effect for the wrapper
-  },
+// 4. Variants for the cuttochase WRAPPER div (with highlight)
+const cuttochaseVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     scale: 1,
-    // Animate background: Flash a color (e.g., yellow) then fade it out
-    backgroundColor: ['rgba(255, 230, 0, 0.4)', 'rgba(255, 230, 0, 0)'], // Keyframes: [Highlight Color, End Color]
     transition: {
-      duration: 0.8, // Total duration for wrapper fade-in, scale, and highlight effect
-      ease: "easeOut",
-       // Define timing and duration specifically for the background color animation part
-      backgroundColor: {
-           times: [0, 1], // Corresponds to the keyframes ['start', 'end']
-           duration: 0.8, // Duration of the background flash
-           ease: "easeOut"
-      },
-      scale: { duration: 0.3 }, // Duration for the scale part
-      // Delay the animation of the child (the a tag) after the wrapper starts
-      delayChildren: 0.2,
-    },
-  },
+      duration: 3,
+      ease: "easeInOut",
+      scale: { duration: 0.5 }
+    }
+  }
 };
-  
 
+  
 
 export default function Hero() {
   return (
@@ -83,6 +71,20 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
+        <motion.a
+          href="/stage"
+          variants={cuttochaseVariants}
+          className={styles.cuttochase}
+          transition={{ duration: 0.4 }}
+          whileHover={{
+          scale: 1.1,
+        transition: { duration: 0.2 },
+      }}
+      whileTap={{ scale: 0.9}}
+>
+  Shortcut to my best work yet →
+</motion.a>
+
         {/* Direct Child 1: The h2 tag */}
         {/* Animates first based on containerVariants stagger */}
        
@@ -115,6 +117,7 @@ export default function Hero() {
             Prev. @ <a href='https://stage.in/' target='blank'>Stage OTT</a> & <a href='https://nurture.farm/' target='blank'> nurture.farm </a>
           </motion.p>
         </motion.div>
+        
 
         {/* Direct Child 3: The recentwork div wrapper */}
         {/* This wrapper itself is animated sequentially with the highlight effect */}
